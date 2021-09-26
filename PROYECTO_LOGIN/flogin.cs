@@ -23,5 +23,20 @@ namespace PROYECTO_LOGIN
         {
 
         }
+
+        private void txtusuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bentrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -15,8 +15,16 @@ namespace PROYECTO_LOGIN
 {
     public partial class fusuario : Form
     {
+        //Crear variable......para conexion
+        public OleDbConnection micoexion;
+
+        //Crear variable.....para saber cual actualizar 
+        public string usuario_modificar;
+
         public fusuario()
         {
+            //Crear variable.....para conexion
+
 
             OleDbConnection conexion = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\DELL\Documents\Usuario.accdb ");
             OleDbCommand com = new OleDbCommand();
@@ -47,7 +55,7 @@ namespace PROYECTO_LOGIN
                     {
                         if (dtr.GetValue(0).ToString() == txtclave.Text)
                         {
-                            MessageBox.Show("Loggin Exitiso");
+                            MessageBox.Show("Loggin Exitoso");
                         }
 
                         else
@@ -66,7 +74,11 @@ namespace PROYECTO_LOGIN
 
         private void fusuario_Load(object sender, EventArgs e)
         {
+            txtuser.Enabled = false;
+            txtclave.Enabled = false;
+            //lstnivel.Enabled = false;
 
+            //this.tusuarioTableAdapter.Fill(this.sistemaDataSet.tusuario);
         }
 
         private void btnsql_Click(object sender, EventArgs e)
@@ -77,7 +89,7 @@ namespace PROYECTO_LOGIN
             comd.Parameters.AddWithValue("@vusuario", txtuser.Text);
             comd.Parameters.AddWithValue("@vContraseña", txtclave.Text);
             SqlDataReader lector = comd.ExecuteReader();
-            if (lector.Read()) ;
+            if (lector.Read());
             {
                 MessageBox.Show("Contraseña correcta");
             }

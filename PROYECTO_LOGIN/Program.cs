@@ -16,7 +16,7 @@ namespace PROYECTO_LOGIN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new flogin());
+            Application.Run(new fusuario());
         }
     }
 }
